@@ -34,53 +34,55 @@ function Footer() {
   };
 
   return (
-    <footer className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white pt-24 pb-12 border-t border-white/10">
+    <footer className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white pt-16 sm:pt-24 pb-8 sm:pb-12 border-t border-white/10">
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 pb-16 border-b border-white/10">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-white/10">
           <div>
-            <span className="font-display text-2xl font-semibold tracking-[0.2em] uppercase text-white">
+            <span className="font-display text-xl sm:text-2xl font-semibold tracking-[0.2em] uppercase text-white">
               NEOSTACK
             </span>
-            <p className="mt-4 max-w-md text-sm font-light text-[#888888] leading-relaxed">
+            <p className="mt-3 sm:mt-4 max-w-md text-xs sm:text-sm font-light text-[#888888] leading-relaxed">
               A modern digital development studio crafting clean web applications, responsive portfolio platforms, and brand design for growing businesses.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-12 sm:gap-20">
+          <div className="flex flex-wrap gap-8 sm:gap-16 lg:gap-20">
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-[#777777]">
                 LOCATION & TIME
               </span>
-              <p className="mt-3 font-mono text-sm text-white">
+              <p className="mt-2 sm:mt-3 font-mono text-xs sm:text-sm text-white">
                 KERALA, INDIA
               </p>
-              <p className="mt-1 font-mono text-xs text-gray-400">
+              <p className="mt-1 font-mono text-[11px] sm:text-xs text-gray-400">
                 {timeString || "18:00:00 IST"}
               </p>
             </div>
 
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-[#777777]">
                 STUDIO STATUS
               </span>
-              <div className="mt-3 flex items-center gap-2">
+              <div className="mt-2 sm:mt-3 flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-green-500 animate-ping" />
-                <span className="font-mono text-xs text-white">AVAILABLE FOR PROJECTS</span>
+                <span className="font-mono text-[11px] sm:text-xs text-white">
+                  AVAILABLE FOR PROJECTS
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Credits & Back To Top */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-[#666666]">
+        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 font-mono text-[11px] sm:text-xs text-[#666666]">
           <p>© {new Date().getFullYear()} NEOSTACK. ALL RIGHTS RESERVED.</p>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white transition-all hover:bg-white hover:text-black"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 min-h-[44px] text-xs text-white transition-all hover:bg-white hover:text-black active:scale-95"
           >
             <span>BACK TO TOP</span>
             <HiArrowUp />

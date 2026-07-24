@@ -1,84 +1,187 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-const fullParagraph =
-  "At NeoStack, we help businesses establish a strong digital presence through clean design, modern technology, and reliable web solutions. We believe every business deserves a fast, beautiful, and accessible website that supports long-term growth.";
+const principles = [
+  {
+    num: "01",
+    title: "Modern Design",
+    description:
+      "Bespoke aesthetics, fluid motion, and pixel-perfect editorial layouts crafted to make your brand instantly memorable.",
+  },
+  {
+    num: "02",
+    title: "Fast Performance",
+    description:
+      "Lightweight architecture, zero layout shifts, and ultra-responsive execution engineered for maximum conversion.",
+  },
+  {
+    num: "03",
+    title: "Built for Growth",
+    description:
+      "Modular design systems and scalable code foundations built to seamlessly expand alongside your business.",
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 function OurVision() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const [displayedText, setDisplayedText] = useState("");
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let index = 0;
-    // High speed typing effect: 10ms per character for fast snappy reveal
-    const interval = setInterval(() => {
-      if (index < fullParagraph.length) {
-        setDisplayedText(fullParagraph.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 10);
-
-    return () => clearInterval(interval);
-  }, [isInView]);
-
   return (
     <section
       id="vision"
-      className="dark-section relative w-full overflow-hidden bg-black text-white py-16 sm:py-24"
+      className="dark-section relative w-full overflow-hidden bg-black text-white py-24 sm:py-36 md:py-44 border-t border-white/10"
     >
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Main Immersive & Cinematic Background Image Container */}
-        <div className="relative min-h-[70vh] sm:min-h-[80vh] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl flex items-center justify-center">
-          {/* Crisp Background Image (NO BLUR!) occupying the entire container */}
-          <img
-            src="/images/frame_178.png"
-            alt="NeoStack Vision Studio Visual"
-            loading="eager"
-            className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1000 scale-[1.01] hover:scale-[1.03]"
+      {/* Abstract Animated Visual Background: Subtle Aurora & Gradient Beams */}
+      <div className="pointer-events-none absolute inset-0 select-none overflow-hidden">
+        {/* Soft Animated Gradient Beam 1 */}
+        <motion.div
+          animate={{
+            opacity: [0.15, 0.3, 0.15],
+            scale: [1, 1.15, 1],
+            x: [0, 30, 0],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-32 left-1/4 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-white/10 to-transparent blur-[140px]"
+        />
+
+        {/* Soft Animated Gradient Beam 2 */}
+        <motion.div
+          animate={{
+            opacity: [0.1, 0.25, 0.1],
+            scale: [1.1, 1, 1.1],
+            y: [0, -40, 0],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-32 right-1/4 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-white/10 to-transparent blur-[160px]"
+        />
+
+        {/* Thin Minimal Geometry Vector Accent Lines */}
+        <svg
+          className="absolute inset-0 h-full w-full opacity-15 stroke-white"
+          viewBox="0 0 1200 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <motion.path
+            d="M-100 200 C300 400 900 100 1300 600"
+            strokeWidth="0.75"
+            strokeDasharray="4 8"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 3, ease: "easeInOut" }}
           />
+          <motion.path
+            d="M-100 500 C400 100 800 700 1300 300"
+            strokeWidth="0.5"
+            strokeDasharray="2 6"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 4, delay: 0.5, ease: "easeInOut" }}
+          />
+        </svg>
 
-          {/* Subtle Dark Overlay for contrast readability (NO backdrop blur) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/35" />
+        {/* Noise overlay */}
+        <div className="absolute inset-0 bg-noise opacity-20" />
+      </div>
 
-          {/* Overlaid Editorial Content Directly On Top of Image */}
-          <div
-            ref={ref}
-            className="relative z-10 max-w-4xl px-6 py-16 sm:px-12 sm:py-24 text-center flex flex-col items-center"
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col items-start max-w-4xl">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-mono text-xs uppercase tracking-[0.3em] text-[#888888] border border-white/15 rounded-full px-4 py-1.5 bg-white/5 backdrop-blur-md mb-6 sm:mb-8"
           >
-            {/* Section Tag */}
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="font-mono text-xs uppercase tracking-[0.3em] text-gray-300 border border-white/20 rounded-full px-4 py-1.5 bg-black/40 mb-8"
-            >
-              02 / OUR VISION
-            </motion.span>
+            02 / OUR VISION
+          </motion.span>
 
-            {/* Large Bold Editorial White Heading */}
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-bold tracking-tight text-white uppercase"
-            >
-              OUR VISION
-            </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tight text-white uppercase leading-[0.95]"
+          >
+            OUR VISION
+          </motion.h2>
 
-            {/* High-Speed Snappy Typing Style Paragraph Reveal */}
-            <div className="mt-8 text-lg sm:text-xl md:text-2xl font-light leading-relaxed text-gray-200 max-w-3xl min-h-[5em]">
-              <span>{displayedText}</span>
-              {displayedText.length < fullParagraph.length && (
-                <span className="inline-block w-2 h-5 bg-white ml-1 animate-pulse align-middle" />
-              )}
-            </div>
-          </div>
+          {/* Short Editorial Statement Paragraph */}
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-6 sm:mt-10 font-serif italic text-lg sm:text-2xl md:text-3xl font-light leading-relaxed text-[#D4D4D8] max-w-3xl border-l-2 border-white/20 pl-4 sm:pl-6"
+          >
+            We don't just build websites. We create digital experiences that are fast, beautiful, and built to grow with your business.
+          </motion.p>
         </div>
+
+        {/* Three Vision Principles Cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-16 sm:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+        >
+          {principles.map((item) => (
+            <motion.div
+              key={item.num}
+              variants={cardVariants}
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0E0E10] p-6 sm:p-8 md:p-10 transition-all duration-500 hover:border-white/30 hover:bg-[#141417]"
+            >
+              {/* Subtle ambient hover glow */}
+              <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-white/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <span className="font-mono text-xs text-[#777777] uppercase tracking-widest">
+                  PRINCIPLE {item.num}
+                </span>
+                <span className="h-1.5 w-1.5 rounded-full bg-white/60 transition-transform group-hover:scale-150 group-hover:bg-white" />
+              </div>
+
+              <h3 className="mt-8 font-display text-2xl sm:text-3xl font-light text-white tracking-tight">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 text-sm sm:text-base font-light leading-relaxed text-[#999999] group-hover:text-[#CCCCCC] transition-colors">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Bottom Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 sm:mt-24 border-t border-white/10 pt-8 sm:pt-12 text-center"
+        >
+          <span className="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-[#777777]">
+            ( Build • Scale • Evolve )
+          </span>
+        </motion.div>
       </div>
     </section>
   );

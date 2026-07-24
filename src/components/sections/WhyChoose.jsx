@@ -65,51 +65,51 @@ function WhyChoose() {
   return (
     <section
       id="why"
-      className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white py-28 sm:py-36 border-t border-white/10"
+      className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white py-20 sm:py-32 md:py-36 border-t border-white/10"
     >
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-20" />
-      <div className="pointer-events-none absolute left-0 top-1/3 h-[500px] w-[500px] rounded-full bg-white/5 blur-[160px]" />
+      <div className="pointer-events-none absolute left-0 top-1/3 h-[300px] sm:h-[500px] w-[300px] sm:w-[500px] rounded-full bg-white/5 blur-[80px] sm:blur-[160px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Editorial Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-12 gap-6">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-8 sm:pb-12 gap-6">
           <div>
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               03 / CORE CAPABILITIES
             </span>
-            <h2 className="mt-4 font-display text-4xl sm:text-6xl font-light tracking-tight text-white max-w-3xl">
+            <h2 className="mt-3 sm:mt-4 font-display text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white max-w-3xl leading-[1.05]">
               What we build at <br />
               <span className="text-[#888888] italic font-serif">NeoStack Studio.</span>
             </h2>
           </div>
-          <p className="max-w-md text-sm sm:text-base font-light leading-relaxed text-[#AAAAAA]">
+          <p className="max-w-md text-xs sm:text-base font-light leading-relaxed text-[#AAAAAA]">
             Honest digital development and creative services built specifically to help startups, creators, and businesses launch cleanly.
           </p>
         </div>
 
-        {/* Real Capability Cards Grid */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Capability Cards Grid */}
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {capabilities.map((item, idx) => {
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#121212] p-6 transition-all duration-300 hover:border-white/30 hover:bg-[#161616]"
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.5, delay: (idx % 4) * 0.06, ease: "easeOut" }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-6 transition-all duration-300 hover:border-white/30 hover:bg-[#161616]"
               >
-                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-lg text-white transition-transform group-hover:scale-110">
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-lg text-white transition-transform group-hover:scale-110">
                   <Icon />
                 </div>
 
-                <h3 className="font-display text-xl font-light text-white tracking-tight">
+                <h3 className="font-display text-lg sm:text-xl font-light text-white tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm font-light leading-relaxed text-[#888888] group-hover:text-[#AAAAAA]">
+                <p className="mt-2.5 text-xs sm:text-sm font-light leading-relaxed text-[#888888] group-hover:text-[#AAAAAA] transition-colors">
                   {item.description}
                 </p>
               </motion.div>

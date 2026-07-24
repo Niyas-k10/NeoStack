@@ -17,12 +17,12 @@ const faq = [
     answer:
       "Yes. Every website we design and code is fully responsive, ensuring it looks clean and works smoothly across desktops, laptops, tablets, and mobile phones.",
   },
-  {
-    id: 4,
-    question: "Can you redesign my existing website?",
-    answer:
-      "Yes! We can take your existing website and rebuild it with clean modern UI, better typography, responsive styling, and improved loading speed.",
-  },
+  // {
+  //   id: 4,
+  //   question: "Can you redesign my existing website?",
+  //   answer:
+  //     "Yes! We can take your existing website and rebuild it with clean modern UI, better typography, responsive styling, and improved loading speed.",
+  // },
   {
     id: 5,
     question: "Will my website be mobile friendly?",

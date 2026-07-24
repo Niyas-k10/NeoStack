@@ -60,12 +60,12 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] overflow-hidden bg-transparent text-black pt-28 pb-20 flex flex-col justify-between"
+      className="relative min-h-[90vh] sm:min-h-[92vh] overflow-hidden bg-transparent text-black pt-24 sm:pt-28 pb-12 sm:pb-20 flex flex-col justify-between"
     >
-      {/* Floating Ambient Dust Particle System (Dedicated Canvas) */}
+      {/* Floating Ambient Dust Particle System */}
       <HeroDustCanvas />
 
-      {/* Subtle Floating Geometric Accents & Lines Reacting to Scroll */}
+      {/* Floating Geometric Accents (Hidden on Mobile for performance) */}
       <div className="absolute right-12 top-1/3 w-[300px] h-[300px] pointer-events-none z-0 hidden lg:block opacity-30 select-none">
         <svg viewBox="0 0 200 200" className="w-full h-full">
           <line
@@ -104,9 +104,9 @@ function Hero() {
       </div>
 
       {/* Bottom Status Bar */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 flex justify-between items-center text-xs font-mono uppercase tracking-widest text-[#777777] border-t border-[#ECECEC] pt-4">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 flex justify-between items-center text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#777777] border-t border-[#ECECEC] pt-4">
         <span>01 / OVERVIEW</span>
-        <div className="flex items-center gap-2">
+        <div className="hidden xs:flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-black animate-pulse" />
           <span>SCROLL TO DISCOVER</span>
         </div>
