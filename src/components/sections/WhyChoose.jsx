@@ -77,18 +77,18 @@ function WhyChoose() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               03 / CORE CAPABILITIES
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white max-w-3xl leading-[1.05]">
+            <h2 className="mt-3 sm:mt-4 font-display text-2.5xl xs:text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white max-w-3xl leading-[1.05]">
               What we build at <br />
               <span className="text-[#888888] italic font-serif">NeoStack Studio.</span>
             </h2>
           </div>
-          <p className="max-w-md text-xs sm:text-base font-light leading-relaxed text-[#AAAAAA]">
+          <p className="max-w-md text-xs sm:text-base font-light leading-relaxed text-[#AAAAAA] text-balance">
             Honest digital development and creative services built specifically to help startups, creators, and businesses launch cleanly.
           </p>
         </div>
 
         {/* Capability Cards Grid */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {capabilities.map((item, idx) => {
             const Icon = item.icon;
 
@@ -99,17 +99,17 @@ function WhyChoose() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.5, delay: (idx % 4) * 0.06, ease: "easeOut" }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-6 transition-all duration-300 hover:border-white/30 hover:bg-[#161616]"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#121212] p-5 sm:p-6 transition-all duration-300 hover:border-white/30 hover:bg-[#161616] active:bg-[#181818]"
               >
-                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-lg text-white transition-transform group-hover:scale-110">
+                <div className="mb-4 sm:mb-5 flex h-10 w-10 min-touch items-center justify-center rounded-xl border border-white/15 bg-white/5 text-lg text-white transition-transform group-hover:scale-110">
                   <Icon />
                 </div>
 
-                <h3 className="font-display text-lg sm:text-xl font-light text-white tracking-tight">
+                <h3 className="font-display text-base sm:text-lg lg:text-xl font-light text-white tracking-tight">
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 text-xs sm:text-sm font-light leading-relaxed text-[#888888] group-hover:text-[#AAAAAA] transition-colors">
+                <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm font-light leading-relaxed text-[#888888] group-hover:text-[#AAAAAA] transition-colors">
                   {item.description}
                 </p>
               </motion.div>

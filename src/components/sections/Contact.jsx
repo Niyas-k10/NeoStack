@@ -65,18 +65,18 @@ function Contact() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               09 / DIRECT STUDIO INITIATION
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-3xl sm:text-5xl md:text-7xl font-light tracking-tight text-black max-w-3xl leading-[1.05]">
+            <h2 className="mt-3 sm:mt-4 font-display text-2.5xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-black max-w-3xl leading-[1.05]">
               Initiate a brief. <br className="hidden sm:inline" />
               <span className="italic font-serif font-light text-[#444444]">No forms required.</span>
             </h2>
           </div>
-          <p className="max-w-md text-xs sm:text-base font-light leading-relaxed text-[#555555]">
+          <p className="max-w-md text-xs sm:text-base font-light leading-relaxed text-[#555555] text-balance">
             Pick your preferred direct channel below. We respond to all technical inquiries and project briefs within 4 hours.
           </p>
         </div>
 
         {/* 4 Channel Grid */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
+        <div className="mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {contactChannels.map((item) => {
             const Icon = item.icon;
             const isCopied = copiedId === item.id;
@@ -84,7 +84,7 @@ function Contact() {
             return (
               <div
                 key={item.id}
-                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ECECEC] bg-[#F9F9FB] p-5 sm:p-8 md:p-10 transition-all duration-300 hover:border-black hover:bg-white hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] flex flex-col justify-between"
+                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ECECEC] bg-[#F9F9FB] p-5 sm:p-7 md:p-10 transition-all duration-300 hover:border-black hover:bg-white hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] active:bg-white flex flex-col justify-between"
               >
                 <div>
                   <div className="flex justify-between items-center">
@@ -95,7 +95,7 @@ function Contact() {
                     <button
                       type="button"
                       onClick={() => handleCopy(item.id, item.label)}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-[#ECECEC] px-3.5 py-1.5 min-h-[36px] font-mono text-[11px] text-[#555555] transition-all hover:border-black hover:text-black active:scale-95"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[#ECECEC] px-3.5 py-1.5 min-h-[40px] font-mono text-[11px] text-[#555555] transition-all hover:border-black hover:text-black active:scale-95 min-touch"
                     >
                       {isCopied ? (
                         <>
@@ -111,7 +111,7 @@ function Contact() {
                     </button>
                   </div>
 
-                  <h3 className="mt-6 sm:mt-8 font-display text-xl sm:text-3xl font-light text-black">
+                  <h3 className="mt-5 sm:mt-8 font-display text-lg sm:text-2xl md:text-3xl font-light text-black">
                     {item.title}
                   </h3>
 
@@ -124,7 +124,7 @@ function Contact() {
                   </p>
                 </div>
 
-                <div className="mt-8 sm:mt-10 border-t border-[#ECECEC] pt-5 sm:pt-6">
+                <div className="mt-6 sm:mt-10 border-t border-[#ECECEC] pt-4 sm:pt-6">
                   <a
                     href={item.link}
                     target="_blank"

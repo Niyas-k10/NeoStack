@@ -34,16 +34,16 @@ function Footer() {
   };
 
   return (
-    <footer className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white pt-16 sm:pt-24 pb-8 sm:pb-12 border-t border-white/10">
+    <footer className="dark-section relative overflow-hidden bg-[#0A0A0A] text-white pt-14 sm:pt-24 pb-safe border-t border-white/10">
       <div className="pointer-events-none absolute inset-0 bg-noise opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-white/10">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-12 pb-10 sm:pb-16 border-b border-white/10">
           <div>
             <span className="font-display text-xl sm:text-2xl font-semibold tracking-[0.2em] uppercase text-white">
               NEOSTACK
             </span>
-            <p className="mt-3 sm:mt-4 max-w-md text-xs sm:text-sm font-light text-[#888888] leading-relaxed">
+            <p className="mt-3 sm:mt-4 max-w-md text-xs sm:text-sm font-light text-[#888888] leading-relaxed text-balance">
               A modern digital development studio crafting clean web applications, responsive portfolio platforms, and brand design for growing businesses.
             </p>
           </div>
@@ -76,13 +76,13 @@ function Footer() {
         </div>
 
         {/* Bottom Credits & Back To Top */}
-        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 font-mono text-[11px] sm:text-xs text-[#666666]">
+        <div className="mt-8 sm:mt-12 flex flex-col-reverse sm:flex-row items-center justify-between gap-4 sm:gap-6 font-mono text-[11px] sm:text-xs text-[#666666]">
           <p>© {new Date().getFullYear()} NEOSTACK. ALL RIGHTS RESERVED.</p>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 min-h-[44px] text-xs text-white transition-all hover:bg-white hover:text-black active:scale-95"
+            className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2.5 min-h-[48px] text-xs text-white transition-all hover:bg-white hover:text-black active:scale-95 min-touch"
           >
             <span>BACK TO TOP</span>
             <HiArrowUp />

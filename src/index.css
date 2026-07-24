@@ -37,6 +37,30 @@ body {
   font-feature-settings: "cv11", "ss01", "ss02";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  text-rendering: optimizeLegibility;
+}
+
+/* Antigravity Responsive & Mobile Touch Utilities */
+.h-dvh {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.min-h-dvh {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Responsive Text Balance & Wrap Safety */
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 /* Antigravity Typography Utilities */
@@ -80,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Lenis Scroll Smoothness */
+/* Lenis Scroll Smoothness & Touch Fixes */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -96,6 +120,12 @@ html.lenis body {
 
 .lenis.lenis-stopped {
   overflow: hidden;
+}
+
+/* Smooth Touch Scrolling inside Drawers */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 /* Skip link accessibility */
@@ -128,7 +158,7 @@ html.lenis body {
   background-size: 24px 24px;
 }
 
-/* Antigravity Safe Area & Touch Utilities */
+/* Antigravity Safe Area & Touch Utilities for iOS & Android */
 :root {
   --sat: env(safe-area-inset-top, 0px);
   --sab: env(safe-area-inset-bottom, 0px);
@@ -141,7 +171,20 @@ html.lenis body {
 }
 
 .pb-safe {
-  padding-bottom: max(1rem, var(--sab));
+  padding-bottom: max(1.5rem, var(--sab));
+}
+
+.pl-safe {
+  padding-left: max(1rem, var(--sal));
+}
+
+.pr-safe {
+  padding-right: max(1rem, var(--sar));
+}
+
+.px-safe {
+  padding-left: max(1rem, var(--sal));
+  padding-right: max(1rem, var(--sar));
 }
 
 .min-touch {

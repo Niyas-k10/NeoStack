@@ -118,7 +118,7 @@ function OurVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-bold tracking-tight text-white uppercase leading-[0.95]"
+            className="font-display text-3.5xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tight text-white uppercase leading-[0.95]"
           >
             OUR VISION
           </motion.h2>
@@ -129,7 +129,7 @@ function OurVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 sm:mt-10 font-serif italic text-lg sm:text-2xl md:text-3xl font-light leading-relaxed text-[#D4D4D8] max-w-3xl border-l-2 border-white/20 pl-4 sm:pl-6"
+            className="mt-6 sm:mt-10 font-serif italic text-base sm:text-xl md:text-2xl lg:text-3xl font-light leading-relaxed text-[#D4D4D8] max-w-3xl border-l-2 border-white/20 pl-4 sm:pl-6 text-balance"
           >
             We don't just build websites. We create digital experiences that are fast, beautiful, and built to grow with your business.
           </motion.p>
@@ -141,13 +141,13 @@ function OurVision() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mt-16 sm:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+          className="mt-12 sm:mt-20 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
         >
           {principles.map((item) => (
             <motion.div
               key={item.num}
               variants={cardVariants}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0E0E10] p-6 sm:p-8 md:p-10 transition-all duration-500 hover:border-white/30 hover:bg-[#141417]"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0E0E10] p-5 sm:p-7 md:p-9 transition-all duration-500 hover:border-white/30 hover:bg-[#141417]"
             >
               {/* Subtle ambient hover glow */}
               <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-white/5 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -159,11 +159,11 @@ function OurVision() {
                 <span className="h-1.5 w-1.5 rounded-full bg-white/60 transition-transform group-hover:scale-150 group-hover:bg-white" />
               </div>
 
-              <h3 className="mt-8 font-display text-2xl sm:text-3xl font-light text-white tracking-tight">
+              <h3 className="mt-6 sm:mt-8 font-display text-xl sm:text-2xl lg:text-3xl font-light text-white tracking-tight">
                 {item.title}
               </h3>
 
-              <p className="mt-4 text-sm sm:text-base font-light leading-relaxed text-[#999999] group-hover:text-[#CCCCCC] transition-colors">
+              <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base font-light leading-relaxed text-[#999999] group-hover:text-[#CCCCCC] transition-colors">
                 {item.description}
               </p>
             </motion.div>

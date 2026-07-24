@@ -45,17 +45,17 @@ function Services() {
                 onClick={() => toggleService(item.id)}
                 className="group border-b border-[#ECECEC] py-6 sm:py-9 cursor-pointer select-none"
               >
-                <div className="flex items-center justify-between gap-4 min-h-[48px]">
-                  <div className="flex items-baseline gap-4 sm:gap-8 min-w-0">
-                    <span className="font-mono text-sm sm:text-lg font-light text-[#777777] group-hover:text-black transition-colors shrink-0">
+                <div className="flex items-center justify-between gap-3 sm:gap-4 min-h-[48px]">
+                  <div className="flex items-baseline gap-3 sm:gap-6 md:gap-8 min-w-0">
+                    <span className="font-mono text-xs sm:text-base md:text-lg font-light text-[#777777] group-hover:text-black transition-colors shrink-0">
                       {item.id}
                     </span>
-                    <h3 className="font-display text-xl sm:text-3xl md:text-5xl font-light tracking-tight text-black transition-transform duration-300 group-hover:translate-x-1 sm:group-hover:translate-x-2 truncate">
+                    <h3 className="font-display text-lg sm:text-2xl md:text-4xl lg:text-5xl font-light tracking-tight text-black transition-transform duration-300 group-hover:translate-x-1 sm:group-hover:translate-x-2 leading-snug">
                       {item.title}
                     </h3>
                   </div>
 
-                  <div className="flex items-center gap-4 sm:gap-6 shrink-0">
+                  <div className="flex items-center gap-3 sm:gap-6 shrink-0">
                     <span className="hidden lg:inline-block font-mono text-xs uppercase tracking-widest text-[#777777]">
                       {item.subtitle}
                     </span>
@@ -64,7 +64,7 @@ function Services() {
                     <button
                       type="button"
                       aria-label="Toggle service details"
-                      className="flex h-9 w-9 sm:h-10 sm:w-10 min-touch items-center justify-center rounded-full border border-[#ECECEC] text-base sm:text-lg text-black transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white"
+                      className="flex h-10 w-10 min-touch items-center justify-center rounded-full border border-[#ECECEC] text-base sm:text-lg text-black transition-all duration-300 group-hover:border-black group-hover:bg-black group-hover:text-white"
                     >
                       <motion.span
                         animate={{ rotate: isOpen ? 45 : 0 }}
