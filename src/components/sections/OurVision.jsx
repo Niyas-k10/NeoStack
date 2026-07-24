@@ -118,7 +118,7 @@ function OurVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-3.5xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7rem] font-bold tracking-tight text-white uppercase leading-[0.95]"
+            className="section-heading font-display font-bold tracking-tight text-white uppercase md:text-7xl lg:text-[7rem] md:leading-[0.95]"
           >
             OUR VISION
           </motion.h2>

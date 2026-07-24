@@ -49,7 +49,7 @@ function Portfolio() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               04 / SELECTED WORKS & CASE STUDIES
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-2.5xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white max-w-3xl leading-[1.05]">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-white max-w-3xl md:text-6xl lg:text-7xl md:leading-[1.05]">
               Immersive web projects <br className="hidden sm:inline" />
               <span className="text-[#888888] italic font-serif">built without compromise.</span>
             </h2>

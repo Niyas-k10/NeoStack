@@ -90,15 +90,21 @@ function Navbar() {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+      document.body.classList.add("menu-open");
       lenis?.stop();
     } else {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
+      document.body.style.touchAction = "";
+      document.body.classList.remove("menu-open");
       lenis?.start();
     }
     return () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
+      document.body.style.touchAction = "";
+      document.body.classList.remove("menu-open");
       getLenis()?.start();
     };
   }, [menuOpen]);
@@ -192,7 +198,7 @@ function Navbar() {
             animate={{ opacity: 1, y: "0%" }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[200] bg-white/98 text-black flex flex-col justify-between overflow-y-auto touch-scroll shadow-2xl backdrop-blur-2xl md:hidden min-h-dvh"
+            className="fixed inset-0 z-[200] bg-white/98 text-black flex flex-col justify-between overflow-hidden shadow-2xl backdrop-blur-2xl md:hidden h-dvh max-h-dvh"
             style={{
               paddingTop: "max(1rem, env(safe-area-inset-top))",
               paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))",
@@ -221,71 +227,73 @@ function Navbar() {
               </button>
             </div>
 
-            {/* Standard Legible Navigation Links */}
-            <nav className="my-auto py-4 overflow-y-auto">
-              <ul className="flex flex-col gap-1.5">
-                {navLinks.map((link, idx) => {
-                  const isActive = activeId === link.id;
-                  return (
-                    <motion.li
-                      key={link.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.25,
-                        delay: 0.04 * idx,
-                        ease: "easeOut",
-                      }}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => scrollToSection(link.id)}
-                        className={`flex w-full items-center justify-between px-4 py-3 rounded-xl text-left font-display text-base font-medium transition-all duration-200 min-h-[48px] ${
-                          isActive
-                            ? "bg-black text-white shadow-sm"
-                            : "text-black hover:bg-[#F4F4F5] active:bg-[#E4E4E7]"
-                        }`}
+            {/* Independent Scrollable Body Area with Hidden Scrollbar & Fluid Momentum Scroll */}
+            <div className="flex-1 overflow-y-auto overscroll-contain mobile-nav-scrollbar-hide py-4 flex flex-col justify-between">
+              <nav className="my-auto">
+                <ul className="flex flex-col gap-1.5">
+                  {navLinks.map((link, idx) => {
+                    const isActive = activeId === link.id;
+                    return (
+                      <motion.li
+                        key={link.name}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.25,
+                          delay: 0.04 * idx,
+                          ease: "easeOut",
+                        }}
                       >
-                        <div className="flex items-center gap-3.5">
-                          <span
-                            className={`font-mono text-xs ${
-                              isActive ? "text-gray-300" : "text-[#888888]"
-                            }`}
-                          >
-                            0{idx + 1}
-                          </span>
-                          <span>{link.name}</span>
-                        </div>
-                        <HiArrowUpRight
-                          className={`text-sm transition-transform ${
+                        <button
+                          type="button"
+                          onClick={() => scrollToSection(link.id)}
+                          className={`flex w-full items-center justify-between px-4 py-3 rounded-xl text-left font-display text-base font-medium transition-all duration-200 min-h-[48px] ${
                             isActive
-                              ? "text-white"
-                              : "text-[#888888] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                              ? "bg-black text-white shadow-sm"
+                              : "text-black hover:bg-[#F4F4F5] active:bg-[#E4E4E7]"
                           }`}
-                        />
-                      </button>
-                    </motion.li>
-                  );
-                })}
-              </ul>
-            </nav>
+                        >
+                          <div className="flex items-center gap-3.5">
+                            <span
+                              className={`font-mono text-xs ${
+                                isActive ? "text-gray-300" : "text-[#888888]"
+                              }`}
+                            >
+                              0{idx + 1}
+                            </span>
+                            <span>{link.name}</span>
+                          </div>
+                          <HiArrowUpRight
+                            className={`text-sm transition-transform ${
+                              isActive
+                                ? "text-white"
+                                : "text-[#888888] group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            }`}
+                          />
+                        </button>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+              </nav>
 
-            {/* Bottom CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.35 }}
-              className="pt-3 border-t border-[#ECECEC] shrink-0"
-            >
-              <button
-                type="button"
-                onClick={() => scrollToSection("contact")}
-                className="flex items-center justify-center gap-2.5 w-full rounded-full bg-black py-3.5 min-h-[48px] font-display text-xs uppercase tracking-widest text-white font-medium shadow-md transition-all active:scale-[0.98]"
+              {/* Bottom CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.35 }}
+                className="pt-3 mt-4 border-t border-[#ECECEC] shrink-0"
               >
-                <span>Get In Touch</span>
-                <HiArrowUpRight className="text-sm" />
-              </button>
-            </motion.div>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("contact")}
+                  className="flex items-center justify-center gap-2.5 w-full rounded-full bg-black py-3.5 min-h-[48px] font-display text-xs uppercase tracking-widest text-white font-medium shadow-md transition-all active:scale-[0.98]"
+                >
+                  <span>Get In Touch</span>
+                  <HiArrowUpRight className="text-sm" />
+                </button>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

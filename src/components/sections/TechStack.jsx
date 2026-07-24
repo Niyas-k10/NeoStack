@@ -30,7 +30,7 @@ function TechStack() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               06 / TECHNOLOGY ECOSYSTEM
             </span>
-            <h2 className="mt-4 font-display text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-black max-w-3xl">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-black max-w-3xl md:text-7xl md:leading-[1.05]">
               Engineered with world-class <br />
               <span className="italic font-serif font-light text-[#444444]">open technologies.</span>
             </h2>

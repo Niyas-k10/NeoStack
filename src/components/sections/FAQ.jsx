@@ -20,7 +20,7 @@ function FAQ() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               06 / FREQUENTLY ASKED QUESTIONS
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-2.5xl xs:text-3xl sm:text-5xl font-light tracking-tight text-black leading-[1.05]">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-black md:text-6xl md:leading-[1.05]">
               Everything you need to know <br className="hidden sm:inline" />
               <span className="italic font-serif font-light text-[#444444]">about working with NeoStack.</span>
             </h2>

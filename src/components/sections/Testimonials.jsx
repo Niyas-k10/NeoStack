@@ -52,7 +52,7 @@ function Testimonials() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               08 / TESTIMONIALS & RECOGNITION
             </span>
-            <h2 className="mt-4 font-display text-4xl sm:text-6xl font-light tracking-tight text-white">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-white md:text-6xl md:leading-[1.05]">
               Endorsements from <br />
               <span className="text-[#888888] italic font-serif">visionary founders.</span>
             </h2>

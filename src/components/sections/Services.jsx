@@ -24,7 +24,7 @@ function Services() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               03 / CAPABILITIES & ARCHITECTURE
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-3xl sm:text-5xl md:text-7xl font-light tracking-tight text-black max-w-3xl leading-[1.05]">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-black max-w-3xl md:text-7xl md:leading-[1.05]">
               Precision services built for <br className="hidden sm:inline" />
               <span className="italic font-serif font-light text-[#444444]">digital excellence.</span>
             </h2>

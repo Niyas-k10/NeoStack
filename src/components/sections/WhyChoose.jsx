@@ -77,7 +77,7 @@ function WhyChoose() {
             <span className="font-mono text-xs uppercase tracking-widest text-[#777777]">
               03 / CORE CAPABILITIES
             </span>
-            <h2 className="mt-3 sm:mt-4 font-display text-2.5xl xs:text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white max-w-3xl leading-[1.05]">
+            <h2 className="section-heading mt-3 sm:mt-4 font-display font-light tracking-tight text-white max-w-3xl md:text-6xl md:leading-[1.05]">
               What we build at <br />
               <span className="text-[#888888] italic font-serif">NeoStack Studio.</span>
             </h2>

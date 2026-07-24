@@ -122,10 +122,44 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Smooth Touch Scrolling inside Drawers */
-.touch-scroll {
+/* Smooth Touch Scrolling inside Drawers & Scrollbar Hiding */
+.touch-scroll,
+.mobile-nav-scrollbar-hide {
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ / Edge */
+}
+
+.mobile-nav-scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+}
+
+/* Background Scroll Lock when Mobile Drawer is Open */
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+}
+
+/* Responsive Section Heading Typography for Sections 02–09 (Tablet & Mobile) */
+.section-heading {
+  font-size: clamp(1.85rem, 6.5vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .section-heading {
+    font-size: 3rem; /* 48px on tablet */
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
 }
 
 /* Skip link accessibility */
