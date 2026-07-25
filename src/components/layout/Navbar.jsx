@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Vision", id: "vision" },
   { name: "Story", id: "why" },
   { name: "Capabilities", id: "services" },
-  { name: "Selected Works", id: "portfolio" },
+  { name: "Works", id: "portfolio" },
   { name: "Process", id: "process" },
   { name: "FAQ", id: "faq" },
   { name: "Contact", id: "contact" },
@@ -133,7 +133,11 @@ function Navbar() {
               onClick={() => scrollToSection("hero")}
               className="flex items-center gap-3 group focus:outline-none rounded-full h-full my-auto shrink-0"
             >
-              <div className="h-2.5 w-2.5 rounded-full bg-black transition-transform duration-300 group-hover:scale-150 shrink-0" />
+              <img
+                src="/logo.png"
+                alt="NeoStack Logo"
+                className="h-[36px] md:h-[40px] lg:h-[44px] w-auto object-contain shrink-0 transition-transform duration-300 ease-in-out group-hover:scale-[1.03]"
+              />
               <span className="font-display text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-black">
                 NEOSTACK
               </span>
@@ -209,7 +213,11 @@ function Navbar() {
             {/* Top Bar inside Overlay */}
             <div className="flex h-[72px] items-center justify-between px-1 py-3 border-b border-[#ECECEC] shrink-0">
               <div className="flex items-center gap-3">
-                <div className="h-2.5 w-2.5 rounded-full bg-black shrink-0" />
+                <img
+                  src="/logo.png"
+                  alt="NeoStack Logo"
+                  className="h-[36px] w-auto object-contain shrink-0"
+                />
                 <span className="font-display text-xs font-semibold tracking-[0.18em] uppercase text-black">
                   NEOSTACK
                 </span>
